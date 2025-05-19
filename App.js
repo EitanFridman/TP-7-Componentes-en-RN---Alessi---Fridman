@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, Button, Alert, SafeAreaView, ScrollView, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Linking, Alert, SafeAreaView, ScrollView, TextInput, TouchableOpacity} from 'react-native';
 
 export default function App() {
   return (
@@ -42,24 +42,53 @@ export default function App() {
               <Text style={styles.ocupacion}>Programador</Text>
               <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
 
+              <Image 
+                source={require('./assets/github.svg')}
+                style={[styles.imagenes, styles.img]}
+              />
+                <Image 
+                source={require('./assets/gmail.svg')}
+                style={[styles.imagenes, styles.img]}
+              />
+                <Image 
+                source={require('./assets/instagram.svg')}
+                style={[styles.imagenes, styles.img]}
+              />
+                <Image 
+                source={require('./assets/linkedin.svg')}
+                style={[styles.imagenes, styles.img]}
+              />
+
+              {/* <TouchableOpacity onPress={handlePress}>
+                <Image 
+                  source={{uri: 'https://via.placeholder.com/150'}}  // Pon aquí la URL de la imagen que deseas mostrar
+                  style={styles.image}
+                />
+              </TouchableOpacity> */}
+
 
               <View style = {styles.fondoB}>
-              <TouchableOpacity
-                style={styles.button}  // Aplica el mismo estilo del botón
-                onPress={() => Alert.alert("Hola")}>
-                <Text style={styles.buttonText}>Ver nose que</Text>  {/* El texto del botón */} 
+
+
+              <TouchableOpacity 
+                style={styles.button} 
+                onPress={ () => Linking.openURL('https://mi-portfolio.com/')}>
+                <Text style={styles.buttonText}>Ver Portfolio</Text> {}
               </TouchableOpacity>
+
               </View>
+
+
            
               <TextInput style= {[styles.input, styles.textInput]} 
               placeholder='Escribi un mensaje...'>
               </TextInput>
 
               <View style = {styles.fondoB}>
-              <TouchableOpacity
-                style={styles.button}  // Aplica el mismo estilo del botón
-                onPress={() => Alert.alert("Hola")}>
-                <Text style={styles.buttonText}>Contacto</Text>  {/* El texto del botón */} 
+              <TouchableOpacity 
+                style={styles.button} 
+                onPress={ () => Linking.openURL('https://whatsapp.com')}>
+                <Text style={styles.buttonText}>Contacto</Text> {}
               </TouchableOpacity>
               </View>
 
@@ -82,20 +111,26 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'red'
   },
   text: {
+    textAlign: 'center',
     fontSize: 35,
     color: 'white',
     marginBottom: 40,
     fontWeight: 'bold', 
   },
   card: {
+    flex: 1,
     backgroundColor: 'rgba(255,255,255,0.9)',
-    padding: 30,
+    padding: 40,
     borderRadius: 25,
     alignItems: 'center',
-    width: 260,
-    margin: 30,
+    display:'flex',
+    justifyContent: 'center',
+    width: '80%',
+    height: '200%',
+   
   
   },
   image: {
@@ -138,18 +173,37 @@ const styles = StyleSheet.create({
   fondoB:{
     backgroundColor: 'blue',
     borderRadius: 100,
-    margin: 10,
+    width: '100%',
   },
   input:{
     flex: 1,
     margin: 10,
     padding: 10,
+    width: '130%',
     backgroundColor: 'white',  
-    borderColor: 'black',
-    borderWidth: 0.5,
+    borderColor: 'gray',
+    borderWidth: '0.1px',
     borderRadius: 5,
+    textAlign: 'flex-start'
   },
   textInput: {
     color: 'gray', 
+  },
+  imagenes: {
+    // width: 50,
+    // height: 50,
+    width: '22%',
+    height ,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: 10,
+  },
+  img: {
+    // width: '22%',
+    // aspectRatio: 1,
+    // borderRadius: 8,
   }
+  
 });
