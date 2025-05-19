@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, Button, Alert, SafeAreaView, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Button, Alert, SafeAreaView, ScrollView, TextInput, TouchableOpacity} from 'react-native';
 
 export default function App() {
   return (
@@ -40,18 +40,29 @@ export default function App() {
               
               <Text style={styles.nombre}>Rabin Iztak</Text>
               <Text style={styles.ocupacion}>Programador</Text>
+              <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
 
-              <TextInput style= {styles.input} 
-              placeholder='Escriba su comentario'>
+
+              <View style = {styles.fondoB}>
+              <TouchableOpacity
+                style={styles.button}  // Aplica el mismo estilo del botón
+                onPress={() => Alert.alert("Hola")}>
+                <Text style={styles.buttonText}>Ver nose que</Text>  {/* El texto del botón */} 
+              </TouchableOpacity>
+              </View>
+           
+              <TextInput style= {[styles.input, styles.textInput]} 
+              placeholder='Escribi un mensaje...'>
               </TextInput>
 
               <View style = {styles.fondoB}>
-                <Button 
-                styles ={styles.button}
-                title = 'Ver Perfil'
-                onPress = {()=> Alert.alert("Hola")}/>
+              <TouchableOpacity
+                style={styles.button}  // Aplica el mismo estilo del botón
+                onPress={() => Alert.alert("Hola")}>
+                <Text style={styles.buttonText}>Contacto</Text>  {/* El texto del botón */} 
+              </TouchableOpacity>
               </View>
-           
+
             </View>
 
         </SafeAreaView>
@@ -107,15 +118,38 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     marginTop: 10,
-    marginBottom: 20,
+    marginBottom: 10,
     color: '#333',
   },
   button:
   {
-    
+    backgroundColor: '#007bff',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
   fondoB:{
     backgroundColor: 'blue',
-    borderRadius: 10,
+    borderRadius: 100,
+    margin: 10,
+  },
+  input:{
+    flex: 1,
+    margin: 10,
+    padding: 10,
+    backgroundColor: 'white',  
+    borderColor: 'black',
+    borderWidth: 0.5,
+    borderRadius: 5,
+  },
+  textInput: {
+    color: 'gray', 
   }
 });
