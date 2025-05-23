@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ImageBackground, Image, Linking, Alert, SafeAreaView, ScrollView, TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Linking, SafeAreaView, ScrollView, TextInput, TouchableOpacity} from 'react-native';
 
 export default function App() {
   return (
@@ -16,83 +16,116 @@ export default function App() {
         <ScrollView>
         <SafeAreaView style={{flex: 100}}>
         <Text style={styles.text}>Mi Carta Personal</Text>
-            {/* <View style={styles.card}>
-              <Image 
-                source={require('./assets/profile.jpg')}
-                style={styles.image}
-              />
-              
-              <Text style={styles.nombre}>Rabin Iztak</Text>
-              <Text style={styles.ocupacion}>Programador</Text>
-              <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
 
-              <Button 
-              styles={styles.button}
-              title= 'Ver Perfil'
-              onPress = {()=> Alert.alert("Hola")}/>
-            </View> */}
+          <View style={styles.card}>
+            <Image 
+              source={require('./assets/profile.jpg')}
+              style={styles.image}
+            />
+            
+            <Text style={styles.nombre}>Rabin Iztak</Text>
+            <Text style={styles.ocupacion}>Programador</Text>
+            <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
 
-            <View style={styles.card}>
-              <Image 
-                source={require('./assets/profile.jpg')}
-                style={styles.image}
-              />
-              
-              <Text style={styles.nombre}>Rabin Iztak</Text>
-              <Text style={styles.ocupacion}>Programador</Text>
-              <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
-
-              <Image 
-                source={require('./assets/github.svg')}
-                style={[styles.imagenes, styles.img]}
-              />
-                <Image 
-                source={require('./assets/gmail.svg')}
-                style={[styles.imagenes, styles.img]}
-              />
-                <Image 
-                source={require('./assets/instagram.svg')}
-                style={[styles.imagenes, styles.img]}
-              />
-                <Image 
-                source={require('./assets/linkedin.svg')}
-                style={[styles.imagenes, styles.img]}
-              />
-
-              {/* <TouchableOpacity onPress={handlePress}>
-                <Image 
-                  source={{uri: 'https://via.placeholder.com/150'}}  // Pon aquí la URL de la imagen que deseas mostrar
-                  style={styles.image}
-                />
-              </TouchableOpacity> */}
-
-
-              <View style = {styles.fondoB}>
-
-
-              <TouchableOpacity 
-                style={styles.button} 
-                onPress={ () => Linking.openURL('https://mi-portfolio.com/')}>
-                <Text style={styles.buttonText}>Ver Portfolio</Text> {}
+            <View style={styles.socialContainer}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://github.com')}>
+                <Image source={require('./assets/github.png')} style={styles.socialIcon} />
               </TouchableOpacity>
 
-              </View>
-
-
-           
-              <TextInput style= {[styles.input, styles.textInput]} 
-              placeholder='Escribi un mensaje...'>
-              </TextInput>
-
-              <View style = {styles.fondoB}>
-              <TouchableOpacity 
-                style={styles.button} 
-                onPress={ () => Linking.openURL('https://whatsapp.com')}>
-                <Text style={styles.buttonText}>Contacto</Text> {}
+              <TouchableOpacity onPress={() => Linking.openURL('https://mail.google.com')}>
+                <Image source={require('./assets/gmail.png')} style={styles.socialIcon} />
               </TouchableOpacity>
-              </View>
+
+              <TouchableOpacity onPress={() => Linking.openURL('https://instagram.com')}>
+                <Image source={require('./assets/instagram.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => Linking.openURL('https://linkedin.com')}>
+                <Image source={require('./assets/linkedin.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+            </View>
+
+            <View style = {styles.fondoB}>
+
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={ () => Linking.openURL('https://mi-portfolio.com/')}>
+              <Text style={styles.buttonText}>Ver Portfolio</Text> {}
+            </TouchableOpacity>
 
             </View>
+
+
+          
+            <TextInput style= {[styles.input, styles.textInput]} 
+            placeholder='Escribi un mensaje...'>
+            </TextInput>
+
+            <View style = {styles.fondoB}>
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={ () => Linking.openURL('https://whatsapp.com')}>
+              <Text style={styles.buttonText}>Contacto</Text> {}
+            </TouchableOpacity>
+          </View>
+
+          </View>
+
+            <View style={styles.card}>
+            <Image 
+              source={require('./assets/profile.jpg')}
+              style={styles.image}
+            />
+            
+            <Text style={styles.nombre}>Rabin Iztak</Text>
+            <Text style={styles.ocupacion}>Programador</Text>
+            <Text style={styles.descripcion}>Hola, soy programador de react native y mi materia favorita es DAI</Text>
+
+            <View style={styles.socialContainer}>
+              <TouchableOpacity onPress={() => Linking.openURL('https://github.com')}>
+                <Image source={require('./assets/github.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => Linking.openURL('https://mail.google.com')}>
+                <Image source={require('./assets/gmail.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => Linking.openURL('https://instagram.com')}>
+                <Image source={require('./assets/instagram.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+
+              <TouchableOpacity onPress={() => Linking.openURL('https://linkedin.com')}>
+                <Image source={require('./assets/linkedin.png')} style={styles.socialIcon} />
+              </TouchableOpacity>
+            </View>
+
+            <View style = {styles.fondoB}>
+
+
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={ () => Linking.openURL('https://mi-portfolio.com/')}>
+              <Text style={styles.buttonText}>Ver Portfolio</Text> {}
+            </TouchableOpacity>
+
+            </View>
+
+
+          
+            <TextInput style= {[styles.input, styles.textInput]} 
+            placeholder='Escribi un mensaje...'>
+            </TextInput>
+
+            <View style = {styles.fondoB}>
+            <TouchableOpacity 
+              style={styles.button} 
+              onPress={ () => Linking.openURL('https://whatsapp.com')}>
+              <Text style={styles.buttonText}>Contacto</Text> {}
+            </TouchableOpacity>
+            </View>
+
+          </View>
 
         </SafeAreaView>
         </ScrollView>
@@ -111,13 +144,11 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'red'
   },
   text: {
     textAlign: 'center',
     fontSize: 35,
     color: 'white',
-    marginBottom: 40,
     fontWeight: 'bold', 
   },
   card: {
@@ -125,19 +156,20 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,255,255,0.9)',
     padding: 40,
     borderRadius: 25,
-    alignItems: 'center',
     display:'flex',
     justifyContent: 'center',
-    width: '80%',
+    alignItems: 'center',
+    width: '100%',
     height: '200%',
-   
-  
+    marginTop: 40,
   },
   image: {
     width: 100,
     height: 100,
     borderRadius: 50,
     marginBottom: 20,
+    borderColor:'blue',
+    borderWidth: 1,
   },
   nombre: {
     fontSize: 30,
@@ -158,10 +190,10 @@ const styles = StyleSheet.create({
   },
   button:
   {
-    backgroundColor: '#007bff',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+    width: '100%',
+    // backgroundColor: '#007bff',
+    paddingVertical: 5,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -172,38 +204,36 @@ const styles = StyleSheet.create({
   },
   fondoB:{
     backgroundColor: 'blue',
-    borderRadius: 100,
-    width: '100%',
+    borderRadius: 10,
+    width: '60%',
   },
   input:{
     flex: 1,
     margin: 10,
     padding: 10,
-    width: '130%',
+    textAlign: 'flex-start',
+    width: '120%',
     backgroundColor: 'white',  
     borderColor: 'gray',
-    borderWidth: '0.1px',
-    borderRadius: 5,
-    textAlign: 'flex-start'
+    borderWidth: 0.5,
+    borderRadius: 10
   },
   textInput: {
-    color: 'gray', 
+    color: 'gray',
   },
-  imagenes: {
-    // width: 50,
-    // height: 50,
-    width: '22%',
-    height ,
+  socialContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
-    flexWrap: 'wrap',
-    gap: 10,
+    width: '100%',
+    marginVertical: 20,
+    marginBottom: 30
   },
-  img: {
-    // width: '22%',
-    // aspectRatio: 1,
-    // borderRadius: 8,
-  }
+
+  socialIcon: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain', // importante para que no se recorte
+  },
   
 });
